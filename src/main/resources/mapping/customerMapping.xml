@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org/DTD Mapper 3.0" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.nyg.ssm.dao.CustomerDao">
+    <resultMap id="customerInf" type="CustomerInf">
+        <id  column="customer_id" property="customerId" />
+        <result  column="customer_name" property="customerName"/>
+        <result column="mobile_phone" property="mobilePhone"  />
+        <result  column="customer_email" property="customerEmail" />
+        <result column="gender" property="gender"/>
+        <result  column="user_point" property="userPoint"/>
+        <result  column="registerTime" property="registerTime"/>
+        <result column="birthday" property="birthday" />
+        <result  column="customer_level" property="customerLevel"/>
+        <result  column="modified_time" property="modifiedTime" />
+        <result column="head_portrait" property="headPortrait"/>
+        <association  column="customer_id" property="userPoint" select="com.nyg.ssm.dao.CustomerDao.getPointSumById" fetchType="lazy"/>
+    </resultMap>
+    <resultMap id="pointLog" type="com.nyg.ssm.entity.CustomerPointLog">
+        <id property="pointId" column="point_id" />
+        <result property="customerId" column="customer_id" />
+        <result property="source" column="source" />
+        <result property="referNumber" column="refer_number"/>
+        <result property="changePoint" column="chang_point"/>
+        <result property="createTime" column="create_time"/>
+    </resultMap>
+    <sql id="customerInf">
+        customer_id, customer_name, mobile_phone, customer_email, gender, register_time, birthday,customer_level,modified_time,head_portrait
+    </sql>
+    <insert id="addCustomer" parameterType="CustomerLogin" useGeneratedKeys="true" keyProperty="customerId">
+        insert into
+          customer_login(login_name, password, user_stats, modified_time)
+        values
+          (#{loginName},#{password},#{userStats},#{modifiedTime})
+    </insert>
+    <insert id="addCustomerInf" parameterType="CustomerInf" useGeneratedKeys="true" keyProperty="customerId">
+        insert into
+          customer_inf(customer_id, customer_name, mobile_phone, customer_email, gender, register_time, birthday,customer_level,modified_time)
+        VALUES
+          (#{customerId},#{customerName},#{mobilePhone},#{customerEmail},#{gender},#{registerTime},#{birthday},#{customerLevel},#{modifiedTime})
+    </insert>
+    <select id="findCustomerByID" resultMap="customerInf">
+        select <include refid="customerInf"/>
+        from customer_inf where id=#{id}
+    </select>
+    <insert id="addCustomerAddr" parameterType="CustomerAddr">
+        insert into
+          customer_addr(customer_id, zip, province, address, is_default,modified_time)
+        values
+          (#{customerId},#{zip},#{province},#{address},#{isDefault},#{modifiedTime})
+    </insert>
+    <insert id="addCustomerPointLog" parameterType="CustomerPointLog">
+        insert into
+          customer_point_log(customer_id, source,refer_number,change_point, create_time)
+        values
+          (#{customerId},#{source},#{referNumber},#{changPoint},#{createTime})
+    </insert>
+    <update id="modifyPointLog" parameterType="CustomerPointLog">
+        update customer_point_log
+        <set>
+            <if test="source!=null and source!=''">
+                source=#{source}
+            </if>
+            <if test="changPoint!=null and changPoint!=''">
+                chang_point=#{changPoint}
+            </if>
+            <if test="referNumber!=null and referNumber!=''">
+                refer_number=#{referNumber}
+            </if>
+            <if test="createTime!=null and createTime!=''">
+                create_time=#{createTime}
+            </if>
+        </set>
+    </update>
+    <select id="getPointSumById" resultType="java.lang.Integer">
+        select sum (change_point) from customer_point_log where customer_id=#{id}
+    </select>
+    <!--<select id="getPointLog" resultMap="pointLog">-->
+        <!--select * from customer_point_log where customer_id=#{customerId}-->
+    <!--</select>-->
+    <select id="findAccount" parameterType="string" resultType="integer">
+        select count(login_name) from customer_login where login_name=#{loginName};
+    </select>
+    <select id="findCustomer" resultType="java.lang.Integer" parameterType="com.nyg.ssm.entity.CustomerLogin">
+        select customer_id from customer_login
+        where login_name=#{loginName} and password=#{password}
+    </select>
+    <select id="getCustomerInfById" resultMap="customerInf">
+        select
+         customer_id,customer_name,mobile_phone,customer_email,gender,user_point,register_time,birthday,customer_level
+        from
+        customer_inf
+         where
+         customer_id=#{customerId}
+    </select>
+    <select id="findCustomerByNameAndPsd">
+        select customer_id from customer_login where login_name=#{loginName} and password =#{password}
+    </select>
+    <update id="insertHeadUrl" >
+        update customer_inf
+        <if test="headPortrait != null">
+            set head_portrait=#{headPortrait}
+        </if>
+    </update>
+</mapper>

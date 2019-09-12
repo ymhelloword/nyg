@@ -1,0 +1,235 @@
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, button, textarea, p, blockquote, th, td { margin:0; padding:0 }
+.bg{
+    width: 100%;
+    height: 193px;
+}
+.clear-float:after {
+    content: "";
+    display: block;
+    clear: both;
+    height: 0;
+    overflow: hidden;
+}
+a {
+    text-decoration: none;
+    color: #777777;
+}
+.bg .header-top{
+    width: 100%;
+    height: 34px;
+    background-color: #e3e4e5;
+    margin: 0 auto;
+}
+.bg .header-top .top-nav-content{
+    width: 1200px;
+    height: 34px;
+    margin: 0 auto;
+}
+ .top-nav-content .top-title {
+    width: 200px;
+    height: 34px;
+    float: left;
+}
+.top-nav-content .top-title p{
+    font-size: 12px;
+    color: #777777;
+    line-height: 35px;
+    text-align: center;
+}
+.top-nav-content .top-title span{
+    margin-left: 4px;
+    cursor: pointer;
+}
+.top-nav-content .top-title span a{
+    color: #ff5751;
+    text-decoration: none;
+}
+.top-nav-content .top-title span:hover{
+    text-decoration: underline red;
+    font-size: 14px;
+}
+.top-nav-content .top-ul{
+    width: 540px;
+    height: 34px;
+    float: right;
+    text-align: center;
+    padding: 9px 0;
+    box-sizing:border-box;
+}
+ .top-nav-content .top-ul ul{
+    width: 100%;
+    height: 15px;
+}
+.top-nav-content .top-ul ul li{
+    width: 90px;
+    height: 15px;
+    border-right: 1px solid #676767;
+    float: left;
+    list-style: none;
+    font-size: 12px;
+}
+.top-nav-content .top-ul ul li a{
+    text-decoration: none;
+    color: #777777;
+}
+ .header-content{
+    width: 100%;
+    height: 123px;
+}
+.header-content .search-bg{
+    width: 1200px;
+    height: 123px;
+    margin: 0 auto;
+}
+.search-bg .log{
+    width: 338px;
+    height: 123px;
+    float: left;
+    box-sizing: border-box;
+}
+.search-bg .log .log-img{
+    width: 200px;
+    height: 123px;
+    float: left;
+
+}
+.search-bg .log .log-img img{
+    height: 123px;
+    margin-left: 40px;
+}
+.header-content .search-bg .search{
+    width: 580px;
+    height: 40px;
+    background-color: bisque;
+    float: left;
+    margin-left: 60px;
+    margin-top: 40px;
+}
+.search .search-text{
+    width: 500px;
+    height: 40px;
+    background-color: #e3e4e5;
+    float: left;
+    border: 2px solid #46b136;
+    box-sizing: border-box;
+}
+.search .search-text input{
+    width: 500px;
+    height: 36px;
+    border: none;
+    text-indent: 1em;
+    font-size: 14px;
+    outline: none;
+}
+.search .search-button{
+    width: 80px;
+    height: 40px;
+    display: inline-block;
+    background-color: #47b237;
+}
+.search .search-button span{
+    width: 80px;
+    height: 40px;
+    display: inline-block;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    line-height: 40px;
+    cursor: pointer;
+}
+.search .search-button span:hover{
+    background-color: green;
+}
+.bg .nav-bg{
+    width: 100%;
+    height: 34px;
+    border-bottom: 2px solid green;
+}
+.nav-bg-content{
+    width: 1200px;
+    height: 34px;
+    margin: 0 auto;
+}
+.nav-bg-content ul{
+    width: 1200px;
+    height: 34px;
+}
+.nav-bg-content ul li{
+    width: 180px;
+    height: 34px;
+    float: left;
+    list-style: none;
+    text-align: center;
+}
+.nav-bg-content ul li a{
+    line-height: 34px;
+    text-decoration: none;
+    color: black;
+}
+.nav-bg-content ul li a:hover{
+    color: #5a8050;
+}
+.nav-bg-content ul li:nth-child(1){
+    width: 200px;
+    margin-right: 60px;
+    background-color: green;
+}
+.nav-bg-content ul li:nth-child(1) a{
+    color: white;
+}
+.card-hover :hover {
+    border: 0px solid green;
+}
+.main {
+    clear: left;
+    margin: 0 auto;
+    width: 1200px;
+    border-top: 1px solid #f7f7f7;
+    padding: 0 10px;
+    min-height: 480px;
+    background-color: #f7f7f7;
+}
+.item {
+    float: left;
+    margin: 0 4px;
+    margin-bottom: 10px;
+    border: 1px solid #e6e6e6;
+    border-top: none;
+    border-radius: 6px;
+    width: 24%;
+    height: 340px;
+    background-color: #e6e6e6;
+}
+.item-top {
+    width: 100%;
+    height: 240px;
+    border-bottom: 1px solid green;
+}
+.item-price {
+    font-size: 20px;
+
+}
+.item-price:before {
+    content: "￥";
+    color: red;
+
+}
+.item-price:after {
+    content: "元";
+    color: #ff8b17;
+    margin-left:5px;
+   font-weight: bolder;
+}
+.item:hover{
+   border-color: green;
+}
+.item img {
+    width: 100%;
+    height:240px;
+}
+.item-Details {
+    padding: 0 10px;
+}
+.item-name {
+    font-size: 18px;
+}

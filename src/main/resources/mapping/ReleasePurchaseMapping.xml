@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org/DTD Mapper 3.0" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.nyg.ssm.dao.release.ReleasePurchaseDao">
+    <insert id="addPurchase" parameterType="com.nyg.ssm.entity.Purchase">
+        insert into
+        purchase
+        (id,customer_id,product_name,product_price,product_quantity,place_of_orgin,modified_time,create_time)
+        values
+        (#{id},#{customerId},#{productName},#{productPrice},#{productQuantity},#{placeOfOrgin},#{modifiedTime},#{createTime})
+    </insert>
+    <select id="getPurchases" resultType="com.nyg.ssm.entity.Purchase">
+        select id,customer_id,product_name,product_price,product_quantity,place_of_orgin,create_time from purchase limit #{page},#{size}
+    </select>
+    <select id="getNewPurchases" resultType="com.nyg.ssm.entity.Purchase">
+        select id,customer_id,product_name,product_price,product_quantity,place_of_orgin,create_time from purchase limit #{page},#{size}
+    </select>
+    <select id="getCount" resultType="integer">
+        select count(id) from purchase ;
+    </select>
+</mapper>

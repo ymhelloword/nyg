@@ -1,0 +1,295 @@
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, button, textarea, p, blockquote, th, td { margin:0; padding:0 }
+.bg{
+    width: 100%;
+    height: 193px;
+}
+a {
+    text-decoration: none;
+    color: #777777;
+}
+.bg .header-top{
+    width: 100%;
+    height: 34px;
+    background-color: #e3e4e5;
+    margin: 0 auto;
+}
+.bg .header-top .top-nav-content{
+    width: 1200px;
+    height: 34px;
+    margin: 0 auto;
+}
+.bg .header-top .top-nav-content .top-title {
+    width: 200px;
+    height: 34px;
+    float: left;
+}
+.bg .header-top .top-nav-content .top-title p{
+    font-size: 12px;
+    color: #777777;
+    line-height: 35px;
+    text-align: center;
+}
+.bg .header-top .top-nav-content .top-title span{
+    margin-left: 4px;
+    cursor: pointer;
+}
+.bg .header-top .top-nav-content .top-title span a{
+    color: #ff5751;
+    text-decoration: none;
+}
+.bg .header-top .top-nav-content .top-title span:hover{
+    text-decoration: underline red;
+    font-size: 14px;
+}
+.bg .header-top .top-nav-content .top-ul{
+    width: 540px;
+    height: 34px;
+    float: right;
+    text-align: center;
+    padding: 9px 0;
+    box-sizing:border-box;
+}
+.bg .header-top .top-nav-content .top-ul ul{
+    width: 100%;
+    height: 15px;
+}
+.bg .header-top .top-nav-content .top-ul ul li{
+    width: 90px;
+    height: 15px;
+    border-right: 1px solid #676767;
+    float: left;
+    list-style: none;
+    font-size: 12px;
+}
+.bg .header-top .top-nav-content .top-ul ul li a{
+    text-decoration: none;
+    color: #777777;
+}
+.bg .header-content{
+    width: 100%;
+    height: 123px;
+}
+.bg .header-content .search-bg{
+    width: 1200px;
+    height: 123px;
+    margin: 0 auto;
+}
+.bg .header-content .search-bg .log{
+    width: 338px;
+    height: 123px;
+    float: left;
+    box-sizing: border-box;
+}
+.bg .header-content .search-bg .log .log-img{
+    width: 200px;
+    height: 123px;
+    float: left;
+
+}
+.bg .header-content .search-bg .log .log-img img{
+    height: 123px;
+    margin-left: 40px;
+}
+/*.bg .header-content .search-bg .log .log-art-font{
+    width: 100px;
+    height: 80px;
+    float: left;
+    margin-top: 10px;
+    margin-left: 4px;
+    background-color: #777777;
+}*/
+.bg .header-content .search-bg .search{
+    width: 580px;
+    height: 40px;
+    background-color: bisque;
+    float: left;
+    margin-left: 60px;
+    margin-top: 40px;
+}
+.bg .header-content .search-bg .search .search-text{
+    width: 500px;
+    height: 40px;
+    background-color: #e3e4e5;
+    float: left;
+    border: 2px solid #46b136;
+    box-sizing: border-box;
+}
+.bg .header-content .search-bg .search .search-text input{
+    width: 500px;
+    height: 36px;
+    border: none;
+    text-indent: 1em;
+    font-size: 14px;
+    outline: none;
+}
+.bg .header-content .search-bg .search .search-button{
+    width: 80px;
+    height: 40px;
+    display: inline-block;
+    background-color: #47b237;
+}
+.bg .header-content .search-bg .search .search-button span{
+    width: 80px;
+    height: 40px;
+    display: inline-block;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    line-height: 40px;
+    cursor: pointer;
+}
+.bg .header-content .search-bg .search .search-button span:hover{
+    background-color: green;
+}
+.bg .nav-bg{
+    width: 100%;
+    height: 34px;
+    border-bottom: 2px solid green;
+}
+.bg .nav-bg .nav-bg-content{
+    width: 1200px;
+    height: 34px;
+    margin: 0 auto;
+}
+.bg .nav-bg .nav-bg-content ul{
+    width: 1200px;
+    height: 34px;
+}
+.bg .nav-bg .nav-bg-content ul li{
+    width: 180px;
+    height: 34px;
+    float: left;
+    list-style: none;
+    text-align: center;
+}
+.bg .nav-bg .nav-bg-content ul li a{
+    line-height: 34px;
+    text-decoration: none;
+    color: black;
+}
+.bg .nav-bg .nav-bg-content ul li a:hover{
+    color: #5a8050;
+}
+.bg .nav-bg .nav-bg-content ul li:nth-child(1){
+    width: 200px;
+    margin-right: 60px;
+    background-color: green;
+}
+.bg .nav-bg .nav-bg-content ul li:nth-child(1) a{
+    color: white;
+}
+.content {
+    width: 1200px;
+    margin: 0 auto;
+
+}
+.classification {
+    border: 1px solid #e2e2e2;
+    box-sizing: border-box;
+}
+.clear-float:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+.commodity-classification ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.commodity-classification li {
+    width: 148px;
+    height: 40px;
+    list-style: none;
+
+}
+.commodity-classification a {
+    text-decoration: none;
+    text-align: center;
+    width: 148px;
+    display: inline-block;
+    line-height: 40px;
+    color: black;
+    background-color: #e2e2e2;
+}
+.commodity-classification a:hover {
+    background-color: #bbbbbb;
+}
+.recommend {
+    border: 1px solid #cbcbcb;
+}
+.popular {
+    line-height: 40px;
+    font-size: 20px;
+    color: #ff7c68;
+    padding:0 18px ;
+}
+.recommend ul li {
+    list-style: none;
+    border-bottom: 1px dotted #bbbbbb;
+    line-height: 40px;
+    padding:0 10px ;
+}
+.recommend ul li:last-child {
+    border-bottom:none;
+}
+.recommend a {
+    text-decoration: none;
+    font-size: 18px;
+    display: inline-block;
+    margin: 0 8px;
+    color: #5f5f5f;
+}
+.recommend a:hover {
+    color: #46b136;
+}
+/*商品*/
+.item {
+    display: block;
+    padding-left: 20px;
+    background-color: #f7f7f7;
+}
+.hot-ul>li{
+    float: left;
+    width: 224px;
+    cursor: pointer;
+    list-style: none;
+    border: 1px solid #bfbfbf;
+    box-sizing: border-box;
+    margin: 0 10px 10px 0;
+}
+.hot-ul>li:hover {
+    box-shadow: 0px 0px 4px #37aa4e;
+}
+.hot-ul .hot-img {
+    width: 100%;
+    height: 200px;
+    display: inline-block;
+    background-color: #e6e6e6;
+}
+.item-information li{
+    line-height: 30px;
+    list-style: none;
+    background-color: #f7f7f7;
+    padding-left: 10px;
+
+}
+.item-information .commodity-name {
+    height: 40px;
+    overflow: hidden;
+    line-height: 40px;
+    vertical-align: center;
+    font-size: 18px;
+}
+.commodity-price {
+    font-weight: bolder;
+    color: #ff900b;
+}
+.item-information .commodity-source-area {
+    line-height: 25px;
+}
+.hot-consultation-bg {
+    width: 1200px;
+    margin: 0 auto;
+    background-color: #60bd95;
+}

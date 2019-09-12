@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../../css/management/mainStyle.css">
+    <script src="../../js/jquery-1.12.4.js"></script>
+    <script src="../../js/management/main.js"></script>
+</head>
+<body>
+<div class="header">
+    <div class="top clear-float">
+        <div class="title">
+            <h2>电子商务后台管理系统</h2>
+        </div>
+        <div class="top-right">
+            <span>欢迎:xxx</span>
+            <a href="" class="update_password">修改密码</a>
+            <a href="" class="out">安全退出</a>
+        </div>
+    </div>
+</div>
+<div class="content clear-float">
+    <div class="left">
+        <div class="features">
+            <ul>
+                <li class="uo">
+                    <div>订货平台</div>
+                    <ul class="features-option" style="display: block">
+                        <li><a href="">首页</a></li>
+                        <li><a href="">订单信息</a></li>
+                        <li><a href="">代客下单</a></li>
+                        <li><a href="">商品信息</a></li>
+                        <li><a href="">订货平台设置</a></li>
+                    </ul>
+                </li>
+                <li class="uo">
+                    <div>采购</div>
+                    <ul class="features-option">
+                        <li><a href="">手工制单</a></li>
+                        <li><a href="">采购单</a></li>
+                    </ul>
+                </li>
+                <li class="uo">
+                    <div>商品</div>
+                    <ul class="features-option">
+                        <li><a href="">商品仓库</a></li>
+                        <li><a href="">新增商品</a></li>
+                        <li><a href="">回收站</a></li>
+                        <li><a href="">商品入库</a></li>
+                        <li><a href="">商品出库</a></li>
+                        <li><a href="">出入库明查</a></li>
+                    </ul>
+                </li>
+                <li class="uo">
+                    <div>单据管理</div>
+                    <ul class="features-option">
+                        <li><a href="">单据管理</a></li>
+                    </ul>
+                </li>
+                <li class="uo">
+                    <div>销售管理</div>
+                    <ul class="features-option">
+                        <li><a href="">营销中心</a></li>
+                    </ul>
+                </li>
+                <li class="uo">
+                    <div>其他</div>
+                    <ul class="features-option">
+
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+    <div class="right">
+        <div class="add-commodity clear-float">
+            <h2 id="a">添加商品</h2>
+            <div class="form clear-float">
+                <form action="">
+                    <div>
+                        <label for="coding">商品编码</label>
+                        <input type="text" id="coding" name="productCore" placeholder="填入数值或者字母">
+                    </div>
+                    <div>
+                        <label for="commodity_name">商品名称</label>
+                        <input type="text" id="commodity_name" name="productName" placeholder="商品名称">
+                    </div>
+                    <div>
+                        <label for="bar_code">国条码</label>
+                        <input type="text" id="bar_code" name="barCode" placeholder="填入数字或者字母">
+                    </div>
+                    <div>
+                        <label for="sort_1">一级分类</label>
+                        <select name="oneCategoryId" id="sort_1" >
+                            <option value="0">未选择</option>
+                            <option value="1">生鲜蔬果</option>
+                            <option value="2">粮油米面</option>
+                        </select>
+                    </div>
+                    <div style="position: relative">
+                        <label for="sort_2">二级分类</label>
+                        <select name="twoCategoryId" id="sort_2" value="0">
+                            <option value="0">未选择</option>
+                        </select>
+                        <div class="sort_2 fruit_and_vegetable" style="display: none">
+                            <ul>
+                                <li><a href="javascript:;" value="1">蔬菜</a></li>
+                                <li><a href="javascript:;" value="2">水果</a></li>
+                            </ul>
+                        </div>
+                        <div class="sort_2 rice" style="display: none">
+                            <ul>
+                                <li><a href="javascript:;" value="1">有机水稻</a></li>
+                                <li><a href="javascript:;" value="2">普通水稻</a></li>
+                                <li><a href="javascript:;" value="3">食用油</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div style="position: relative;">
+                        <label for="sort_3">三级分类</label>
+                        <select name="threeCategoryId" id="sort_3">
+                            <option value="0">未选择</option>
+                        </select>
+                        <div class="sort_3" style="display: none"   id="vegetable">
+                            <ul>
+                                <li><a href="javascript:;" value="1">白菜</a></li>
+                                <li><a href="javascript:;" value="2">菠菜</a></li>
+                                <li><a href="javascript:;" value="3">油菜</a></li>
+                                <li><a href="javascript:;" value="4">卷心菜</a></li>
+                                <li><a href="javascript:;" value="5">韭菜</a></li>
+                                <li><a href="javascript:;" value="6">香菜</a></li>
+                                <li><a href="javascript:;" value="7">芥菜</a></li>
+                                <li><a href="javascript:;" value="8">蒜苗</a></li>
+                                <li><a href="javascript:;" value="9">生菜</a></li>
+                                <li><a href="javascript:;" value="10">甘蓝</a></li>
+                                <li><a href="javascript:;" value="11">小葱</a></li>
+                                <li><a href="javascript:;" value="12">萝卜</a></li>
+                                <li><a href="javascript:;" value="13">马铃薯</a></li>
+                                <li><a href="javascript:;" value="14">生姜</a></li>
+                                <li><a href="javascript:;" value="15">大蒜</a></li>
+                                <li><a href="javascript:;" value="16">南瓜</a></li>
+                                <li><a href="javascript:;" value="17">冬瓜</a></li>
+                                <li><a href="javascript:;" value="18">丝瓜</a></li>
+                                <li><a href="javascript:;" value="19">黄瓜</a></li>
+                                <li><a href="javascript:;" value="20">西红柿</a></li>
+                                <li><a href="javascript:;" value="21">玉米</a></li>
+                                <li><a href="javascript:;" value="22">毛豆</a></li>
+                                <li><a href="javascript:;" value="23">豌豆</a></li>
+                                <li><a href="javascript:;" value="24">蚕豆</a></li>
+                                <li><a href="javascript:;" value="25">茄子</a></li>
+                                <li><a href="javascript:;" value="26">辣椒</a></li>
+                                <li><a href="javascript:;" value="27">豇豆</a></li>
+                                <li><a href="javascript:;" value="28">四季豆</a></li>
+                                <li><a href="javascript:;" value="29">香菇</a></li>
+                                <li><a href="javascript:;" value="30">平菇</a></li>
+                                <li><a href="javascript:;" value="31">金针菇</a></li>
+                                <li><a href="javascript:;" value="32">木耳</a></li>
+                            </ul>
+                        </div>
+                        <div class="sort_3" style="display: none" id="fruit">
+                            <ul>
+                                <li><a href="javascript:;" value="1">苹果</a></li>
+                                <li><a href="javascript:;" value="2">梨</a></li>
+                                <li><a href="javascript:;" value="3">西瓜</a></li>
+                                <li><a href="javascript:;" value="4">香蕉</a></li>
+                                <li><a href="javascript:;" value="5">芒果</a></li>
+                                <li><a href="javascript:;" value="6">草莓</a></li>
+                                <li><a href="javascript:;" value="7">橘子</a></li>
+                                <li><a href="javascript:;" value="8">杏</a></li>
+                                <li><a href="javascript:;" value="9">菠萝</a></li>
+                                <li><a href="javascript:;" value="10">甘蔗</a></li>
+                            </ul>
+                        </div>
+                        <div class="sort_3" style="display: none;" id="rice">
+                            <ul>
+                                <li><a href="javascript:;" value="1">稻米</a></li>
+                            </ul>
+                        </div>
+                        <div class="sort_3" style="display: none;" id="edible_oil">
+                            <ul>
+                                <li><a href="javascript:;" value="1">花生油</a></li>
+                                <li><a href="javascript:;" value="2">菜籽油</a></li>
+                                <li><a href="javascript:;" value="3">豆油</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div>
+                        <label for="price">商品销售价</label>
+                        <input type="text" id="price" name="price">
+                    </div>
+                    <div>
+                        <label for="weight">商品重量</label>
+                        <input type="text" id="weight" name="weight">
+                    </div>
+                    <div>
+                        <label for="long">商品长度</label>
+                        <input type="text" id="long" name="long">
+                    </div>
+                    <div>
+                        <label for="Production——date">生产日期</label>
+                        <input type="date" id="Production——date" name="productionDate">
+                    </div>
+                    <div>
+                        <label for="effective_date">有效日期</label>
+                        <input type="text" id="effective_date" name="shelfLife" placeholder="(年，月，日)">
+                    </div>
+                    <div class="img">
+                        <label for="img">请选择一张或多张商品图片:</label>
+                        <input type="file" id="img" multiple name="file">
+                    </div>
+                    <div>
+                        <input type="button" value="添加商品" id="add">
+                        <input type="button" value="取消" id="cancel">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

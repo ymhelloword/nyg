@@ -1,0 +1,96 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+.clear-float:after {
+    content: '';
+    clear: both;
+    width: 0;
+    display: block;
+}
+a {
+    text-decoration: none;
+}
+body {
+
+}
+.header-top {
+    width: 1200px;
+    margin: 0 auto;
+    padding-left: 100px;
+}
+.header-top p {
+    height: 30px;
+    line-height: 30px;
+}
+.header-top a{
+    color: #0C0C0C;
+}
+.member {
+    color: red;
+    margin: 0 5px;
+}
+.member:hover {
+    border-bottom: 2px solid #ffa20a;
+}
+/*.header-top i{*/
+    /*width: 1px;*/
+    /*height: 40px;*/
+    /*border: 1px solid #8e8e91;*/
+    /*background-color: #8e8e91;*/
+/*}*/
+.quit {
+    margin: 0 5px;
+
+}
+.quit:hover {
+    border-bottom:2px solid red;
+}
+.header {
+    width: 1200px;
+    margin: 0 auto;
+    background-color: #ffffff;
+}
+.content {
+
+}
+.tab-car {
+    width: 1200px;
+    margin: 0 auto;
+}
+tr {
+}
+.items {
+    background-color: #dddddd;
+}
+.store {
+    margin-top: 20px;
+    background-color: #d6ffee;
+}
+.store input {
+
+}
+.item-name {
+    color: #ffca84;
+}
+.store thead {
+    border-top: 1px solid black;
+}
+.less {
+    display: inline-block;
+    width: 30px;
+    text-align: center;
+    margin-right:-10px;
+    border: 1px solid #bfbfbf;
+}
+.add {
+    display: inline-block;
+    width: 30px;
+    text-align: center;
+    margin-left:-10px;
+    border: 1px solid #bfbfbf;
+}
+.deleted {
+    color: #ff7677;
+    text-decoration: underline;
+}

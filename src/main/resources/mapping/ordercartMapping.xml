@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org/DTD Mapper 3.0" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.nyg.ssm.dao.OrderCartDao">
+    <insert id="addItem" parameterType="orderCart">
+        insert into order_cart(customer_id,product_id,product_amount,price,add_time,modified_time)
+        values (#{customerId},#{productId},#{productAmount},#{price},#{addTime},#{modifiedTime})
+    </insert>
+    <update id="updataItem" parameterType="OrderCart">
+        update order_cart
+        <set>
+            <if test="productAmount != null">
+                product_amount=productAmount
+            </if>
+            <if test="price != null">
+                price=price
+            </if>
+            <if test="modifiedTime != null">
+                modified_time=modifiedTime
+            </if>
+        </set>
+    </update>
+    <delete id="deleteItem">
+        delete from order_cart where customer_id=#{customerId} and product_id=#{productId}
+    </delete>
+    <select id="findOrderByUserId" resultType="OrderCart">
+        select customer_id,product_id,product_amount,price,add_time,modified_time from order_cart where customer_id=#{customerId}
+    </select>
+    <select id="whetherPersenceProducte" resultType="int">
+        select count(cart_id)from order_cart where product_id=#{productId} and customer_id=#{customerId}
+    </select>
+</mapper>

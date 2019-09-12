@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org/DTD Mapper 3.0" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.nyg.ssm.dao.product.ProductDao">
+    <resultMap id="product" type="com.nyg.ssm.entity.ProductInfo">
+        <id column="product_id" property="productId" jdbcType="INTEGER"/>
+        <result column="product_core" property="productCore" jdbcType="VARCHAR"/>
+        <result column="product_name" property="productName" jdbcType="VARCHAR"/>
+        <result column="bar_code" property="barCode" jdbcType="VARCHAR"/>
+        <result column="brand_id" property="brandId" jdbcType="INTEGER"/>
+        <result column="one_category_id" property="oneCategoryId" jdbcType="SMALLINT"/>
+        <result column="two_category_id" property="twoCategoryId"/>
+        <result column="three_category_id" property="threeCategoryId"/>
+        <result column="supplier_id" property="supplierId" />
+        <result column="price" property="price" javaType="DECIMAL"/>
+        <result column="average_cost" property="averageCost"/>
+        <result column="publish_status" property="publishStatus" jdbcType="TINYINT"/>
+        <result column="audit_status" property="auditStatus" jdbcType="TINYINT"/>
+        <result column="weight" property="weight" jdbcType="REAL"/>
+        <result column="length" property="length" jdbcType="REAL"/>
+        <result column="height" property="height" jdbcType="REAL"/>
+        <result column="width" property="width" jdbcType="REAL"/>
+    </resultMap>
+        <resultMap id="productSimpl" type="com.nyg.ssm.entity.ProductInfo">
+            <id column="product_id" property="productId" jdbcType="INTEGER"/>
+            <result column="product_core" property="productCore" jdbcType="VARCHAR"/>
+            <result column="product_name" property="productName" jdbcType="VARCHAR"/>
+            <result column="supplier_id" property="supplierId" />
+            <result column="price" property="price"/>
+            <result column="publish_status" property="publishStatus" jdbcType="TINYINT"/>
+            <result column="audit_status" property="auditStatus" jdbcType="TINYINT"/>
+            <result column="production_date" property="productionDate" />
+            <result column="shelf_life" property="shelfLife"/>
+            <result column="descript" property="descript"/>
+            <result column="indate" property="indate"/>
+            <association property="productPicInfo" column="product_id" select="com.nyg.ssm.dao.product.ProductDao.findItemUrlById"/>
+        </resultMap>
+    <resultMap id="itemImg" type="com.nyg.ssm.entity.ProductPicInfo">
+        <id column="product_pic_id" property="productPicId"/>
+        <result column="product_id" property="productId"/>
+        <result column="pic_desc" property="picDesc"/>
+        <result column="pic_url" property="picUrl"/>
+        <result column="is_master" property="isMaster"/>
+        <result column="pic_order" property="picOrder"/>
+        <result column="pic_status" property="picStatus"/>
+    </resultMap>
+    <select id="getProductSimpleInfoById" parameterType="int" resultMap="productSimpl">
+        select
+        product_id,product_core,product_name,supplier_id,price,
+        publish_status,audit_status,production_date,shelf_life,descript,indate
+        from product_info
+        where product_id=#{id}
+    </select>
+    <select id="findItemUrlById" resultMap="itemImg" parameterType="int">
+        select product_pic_id,product_id,pic_desc,pic_url,is_master,pic_order,pic_status
+        from product_pic_info
+        where product_id=#{id}
+    </select>
+    <select id="findProductInfos"  resultMap="productSimpl">
+         select
+        product_id,product_core,product_name,supplier_id,price,
+        publish_status,audit_status,production_date,shelf_life,descript,indate
+        from product_info where one_category_id=#{kind_1} and two_category_id=#{kind_2}
+        limit #{page.numbPages},#{page.size}
+    </select>
+    <select id="findProductByName" resultMap="productSimpl">
+        select
+          product_id,product_core,product_name,supplier_id,price,
+          publish_status,audit_status,production_date,shelf_life,descript,indate
+        from product_info
+        where product_name like CONCAT('%',#{productName},'%') limit #{page.numbPages} ,#{page.size}
+    </select>
+    <insert id="addProduct" parameterType="ProductInfo" keyProperty="productId" useGeneratedKeys="true">
+        insert into product_info(product_core,product_name,bar_code,brand_id,one_category_id,
+        two_category_id,three_category_id,price,publish_status,
+        audit_status,weight,length,height,width,production_date,shelf_life,descript,indate,modified_time)
+        values (#{productCore},#{productName},#{barCode}
+        ,#{brandId},#{oneCategoryId},#{twoCategoryId},#{threeCategoryId}
+        ,#{price},#{publishStatus},#{auditStatus}
+        ,#{weight},#{length},#{height},#{width}
+        ,#{productionDate},#{shelfLife},#{descript}
+        ,#{indate},#{modifiedTime})
+    </insert>
+    <insert id="addProductPicInfo" parameterType="ProductPicInfo">
+        insert into product_pic_info (product_id,pic_desc,pic_url,is_master,pic_order,pic_status,modified_time)
+        values (#{productId},#{picDesc},#{picUrl},#{isMaster},#{picOrder},#{picStatus},#{modifiedTime})
+    </insert>
+    <select id="getNewProductId" resultType="integer">
+        select max(product_id) from product_info;
+    </select>
+    <select id="getCount" resultType="integer">
+        select count(product_id) from product_info;
+    </select>
+</mapper>

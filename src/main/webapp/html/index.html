@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../css/index-style.css">
+    <script src="../js/jquery-1.12.4.js"></script>
+    <script src="../js/login_form.js"></script>
+    <script src="../js/index.js"></script>
+    <link rel="stylesheet" href="../layui/css/layui.css">
+    <link rel="stylesheet" href="../fonts/iconfont.css">
+    <link rel="stylesheet" href="../css/SidebarStyle.css">
+    <link rel="stylesheet" href="../css/login_formStyle.css">
+    <style>
+        .icon {
+            width: 2em;
+            height: 1.5em;
+            box-sizing: border-box;
+            padding-top: 5px;
+            vertical-align: -0.15em;
+            fill: currentColor;
+            overflow: hidden;
+        }
+        .icon-lg {
+            width: 1.5em;
+            height: 2em;
+            box-sizing: border-box;
+            padding-top: 5px;
+            vertical-align: -0.15em;
+            fill: currentColor;
+            overflow: hidden;
+        }
+        a {
+            text-decoration: none;
+        }
+        .the-new-bg {
+            width: 100%;
+            height: 475px;
+        }
+        .new-bg {
+            margin: 0 auto;
+            width: 1200px;
+            height: 100%;
+            display: flex;
+            justify-content: space-between;
+        }
+        .new-bg >div {
+            width: 392px;
+            height: 455px;
+            box-sizing: border-box;
+            padding: 10px;
+            background-color: #ffffff;
+        }
+        .latest-top {
+            height: 60px;
+        }
+        .latest-top div{
+            display: inline-block;
+            font-size: 24px;
+        }
+        .latest-top span {
+            font-size: 14px;
+            color: #767676;
+        }
+        .latest-supply .latest-buttom {
+            width: 100%;
+            height: 360px;
+        }
+        .latest-supply .latest-supply-centers {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap:wrap ;
+        }
+        .latest-supply-centers .newest-supply:nth-child(2) {
+
+        }
+        .latest-supply-centers .newest-supply {
+            width: 140px;
+            height: 162px;
+            margin: 10px;
+        }
+        .newest-supply .img {
+            width: 140px;
+            height: 110px;
+            background-color: #f9f9f9;
+        }
+        .newest-supply .info {
+            text-align: center;
+            text-decoration: none;
+        }
+        .newest-supply .info .item-name:hover {
+            color: #00FF00;
+        }
+        .newest-purchase-content .latest-purchase-item{
+            width: 100%;
+            height: 60px;
+            background-color: #e9e9e9;
+            border-radius: 8px;
+            padding: 4px;
+            margin: 20px 0;
+            box-sizing: border-box;
+            color: black;
+        }
+        .latest-purchase-item span {
+            font-size: 14px;
+        }
+        .latest-purchase-item .left {
+            width: 200px;
+            height: 100%;
+            float: left;
+        }
+        .latest-purchase-item .right {
+            width: 160px;
+            height: 100%;
+            float: right;
+        }
+        .latest-purchase-item:hover {
+            background-color: #1faa71;
+            color: white;
+        }
+    </style>
+    <script src="../fonts/iconfont.js"></script>
+</head>
+<body>
+    <div id="page2"></div>
+    <div class="bg">
+        <div class="header-top">
+            <div class="top-nav-content">
+                <div class="top-title">
+                    <p>欢迎来到农优购<span><a href="">请登录</a></span></p>
+                </div>
+                <div class="top-ul">
+                    <ul>
+                        <li><span><a href="javascript:;">网站首页</a></span></li>
+                        <li><span><a href="javascript:;">扶贫项目</a></span></li>
+                        <li><span><a href="javascript:;">关于我们</a></span></li>
+                        <li><span><a href="javascript:;">帮助中心</a></span></li>
+                        <li class="shopping-cart">
+                            <span>
+                                <a href="javascript:;" >购物车</a>
+                                <svg class="icon" aria-hidden="true" style="vertical-align: middle ;padding: 0">
+                                    <use xlink:href="#icongouwuche"></use>
+                                </svg>
+                            </span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="header-content">
+            <div class="search-bg">
+                <div class="log">
+                    <div class="log-img">
+                        <h1><a href="javascript:;"><img src="../img/logo.jpg" alt=""></a></h1>
+                    </div>
+                    <!--<div class="log-art-font">
+                        <h1><a href="javascript:;"><img src="" alt=""></a></h1>
+                    </div>-->
+                </div>
+                <div class="search">
+                    <div class="search-select">
+                        <div id="search-id">
+                            <span></span>
+                        </div>
+                    </div>
+                    <div class="search-text">
+                        <input type="text" placeholder="请输入关键字" class="search-text-model">
+                    </div>
+                    <div class="search-button">
+                        <span>搜索</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="nav-bg">
+            <div class="nav-bg-content">
+                <ul>
+                    <li><a href="javascript:;">首页</a></li>
+                    <li><a href="javascript:;">供应大厅</a></li>
+                    <li><a href="javascript:;">采购大厅</a></li>
+                    <li><a href="javascript:;">扶贫信息</a></li>
+                    <li><a href="javascript:;">产业带</a></li>
+                    <li><a href="javascript:;">信息中心</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="first-category-bg">
+        <div class="content">
+            <div id="left-tab" class="left-tab">
+                <div>
+                    <ul class="main-menu">
+                        <li>
+                            <div>
+                                <svg class="icon-lg" aria-hidden="true">
+                                    <use xlink:href="#iconliangshi"></use>
+                                </svg>
+                                <a href="javascript:;">粮油米面</a>
+                                <span class="span_i">></span>
+                            </div>
+                            <!--<div>-->
+                                <!--<a href="javascript:;">调味品</a>-->
+                                <!--<a href="javascript:;">食用油</a>-->
+                            <!--</div>-->
+                        </li>
+                        <li>
+                            <div>
+                                <svg class="icon-lg" aria-hidden="true">
+                                    <use xlink:href="#iconicon-test"></use>
+                                </svg>
+                                <a href="javascript:;">生鲜水果</a>
+                                <span class="span_i">></span>
+                            </div>
+                            <!--<div>-->
+                                <!--<a href="javascript:;">葡萄类</a>-->
+                                <!--<a href="javascript:;">柑橘类</a>-->
+                            <!--</div>-->
+                        </li>
+                        <li>
+                            <div>
+                                <svg class="icon-lg" aria-hidden="true">
+                                    <use xlink:href="#iconjiuba"></use>
+                                </svg>
+                                <a href="javascript:;">有机葡萄酒</a>
+                                <span class="span_i">></span>
+                            </div>
+                            <!--<div>-->
+                                <!--<a href="javascript:;">葡萄酒</a>-->
+                                <!--<a href="javascript:;">米酒</a>-->
+                            <!--</div>-->
+                        </li>
+                        <li>
+                            <div>
+                                <svg class="icon-lg" aria-hidden="true">
+                                    <use xlink:href="#iconshucaishala"></use>
+                                </svg>
+                                <a href="javascript:;">新鲜蔬菜</a>
+                                <span class="span_i">></span>
+                            </div>
+                            <!--<div>-->
+                                <!--<a href="javascript:;">芽苗类</a>-->
+                                <!--<a href="javascript:;">豆菜类</a>-->
+                            <!--</div>-->
+                        </li>
+                    </ul>
+                    <div class="second-menu"></div>
+                    <div class="second-menu"></div>
+                    <div class="second-menu"></div>
+                    <div class="second-menu"></div>
+                </div>
+            </div>
+            <div class="chang-img">
+                <div class="img-top">
+                    <ul>
+                        <li><img src="../img/changImg/fruit.jpg" alt=""></li>
+                        <li><img src="../img/changImg/timg.jpg" alt=""></li>
+                        <li><img src="../img/changImg/vagetable.jpg" alt=""></li>
+                        <li><img src="../img/changImg/fruit.jpg" alt=""></li>
+                        <li><img src="../img/changImg/fruit.jpg" alt=""></li>
+                        <li><img src="../img/changImg/timg.jpg" alt=""></li>
+                    </ul>
+                    <div class="slider-buttons">
+                        <span class="bg"></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <div class="to-left">
+                        <span><img src="../img/changImg/as.png" alt=""></span>
+                    </div>
+                    <div class="to-right">
+                        <span><img src="../img/changImg/as.png" alt=""></span>
+                    </div>
+                </div>
+                    <!--<div class="img-bottom">
+                        <ul>
+                            <li><img src="" alt=""></li>
+                            <li><img src="" alt=""></li>
+                            <li><img src="" alt=""></li>
+                            <li><img src="" alt=""></li>
+                        </ul>
+                    </div>-->
+            </div>
+            <div class="right-login">
+                <div>
+                    <div class="head_portrait">
+                        <img src="../img/noLogin.039bce8e.png" height="48" width="48"/>
+                    </div>
+                    <div class="login-right">
+                        <span>HI，您好 请登录</span>
+                        <div class="sm-login" id="register"><a href="">免费注册登录</a></div>
+                    </div>
+                </div>
+                <div>下载农优购APP</div>
+                <div class="index-fruit-notice">
+                    <div class="top-notice-title"><span>资讯</span></div>
+                    <div class="top-none_text"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="the-new-bg">
+        <div class="new-bg">
+            <div class="latest-supply">
+                <div class="latest-top">
+                    <div>最新供应</div>
+                    <span>实时掌握最新供应</span>
+                </div>
+                <div class="latest-buttom">
+                    <div class="latest-supply-centers">
+                        <div class="newest-supply">
+                            <a href="">
+                                <div class="img">
+                                    <img src="" alt="">
+                                </div>
+                                <div class="info">
+                                    <div class="item-name">
+                                        <span>草坪种子</span>
+                                    </div>
+                                    <div class="price">
+                                        <span>15元/斤</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="newest-supply">
+                            <a href="">
+                                <div class="img">
+                                    <img src="" alt="">
+                                </div>
+                                <div class="info">
+                                    <div class="item-name">
+                                        <span>草坪种子</span>
+                                    </div>
+                                    <div class="price">
+                                        <span>15元/斤</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="newest-supply">
+                            <a href="">
+                                <div class="img">
+                                    <img src="" alt="">
+                                </div>
+                                <div class="info">
+                                    <div class="item-name">
+                                        <span>草坪种子</span>
+                                    </div>
+                                    <div class="price">
+                                        <span>15元/斤</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="newest-supply">
+                            <a href="">
+                                <div class="img">
+                                    <img src="" alt="">
+                                </div>
+                                <div class="info">
+                                    <div class="item-name">
+                                        <span>草坪种子</span>
+                                    </div>
+                                    <div class="price">
+                                        <span>15元/斤</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="latest-supply-top">
+                <div class="latest-top">
+                    <div>最新采购</div>
+                    <span>实时掌握采购信息</span>
+                </div>
+                <div class="newest-purchase-content">
+                    <a href="">
+                        <div class="latest-purchase-item">
+                            <div class="left">
+                                <div class="name">香蕉</div>
+                                <span>期望货源地：<span>全国</span></span>
+                            </div>
+                            <div class="right"></div>
+                        </div>
+                    </a>
+                    <a href=""><div class="latest-purchase-item"></div></a>
+                    <a href=""><div class="latest-purchase-item"></div></a>
+                    <a href=""><div class="latest-purchase-item"></div></a>
+                </div>
+            </div>
+            <div class="origin-quotation">
+                <div class="latest-top">
+                    <div>最新行情</div>
+                    <span>实时掌握行情信息</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="hot-recommend-bg">
+        <div class="hr-bg">
+            <div class="hr-title">
+                <span>热门推荐</span>
+                <span>精选好货</span>
+            </div>
+            <div class="hot-fruit-rm">
+                <div>
+                    <h3>粮油米面</h3>
+                    <ul class="hot-ul" id="hot_ul">
+                        <li>
+                            <a href="gongying.html"></a>
+                            <img src="" alt="" class="hot-img">
+                            <ul class="item-information">
+                                <li class="commodity-name">商品名称</li>
+                                <li class="commodity-price">20.5<svg class="icon" aria-hidden="true">
+                                    <use xlink:href="#iconjiage-copy"></use>
+                                </svg></li>
+                                <li class="commodity-source-area">商品产地</li>
+                                <li class="commodity-authentication">认证</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="gongying.html"></a>
+                            <img src="" alt="" class="hot-img">
+                            <ul class="item-information">
+                                <li class="commodity-name">商品名称</li>
+                                <li class="commodity-price">商品价格</li>
+                                <li class="commodity-source-area">商品产地</li>
+                                <li class="commodity-authentication">认证</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="gongying.html"></a>
+                            <img src="" alt="" class="hot-img">
+                            <ul class="item-information">
+                                <li class="commodity-name">商品名称</li>
+                                <li class="commodity-price">商品价格</li>
+                                <li class="commodity-source-area">商品产地</li>
+                                <li class="commodity-authentication">认证</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="gongying.html"></a>
+                            <img src="" alt="" class="hot-img">
+                            <ul class="item-information">
+                                <li class="commodity-name">商品名称</li>
+                                <li class="commodity-price">商品价格</li>
+                                <li class="commodity-source-area">商品产地</li>
+                                <li class="commodity-authentication">认证</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="gongying.html"></a>
+                            <img src="" alt="" class="hot-img">
+                            <ul class="item-information">
+                                <li class="commodity-name">商品名称</li>
+                                <li class="commodity-price">商品价格</li>
+                                <li class="commodity-source-area">商品产地</li>
+                                <li class="commodity-authentication">认证</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="gongying.html"></a>
+                            <img src="" alt="" class="hot-img">
+                            <ul class="item-information">
+                                <li class="commodity-name">商品名称</li>
+                                <li class="commodity-price">商品价格</li>
+                                <li class="commodity-source-area">商品产地</li>
+                                <li class="commodity-authentication">认证</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="gongying.html"></a>
+                            <img src="" alt="" class="hot-img">
+                            <ul class="item-information">
+                                <li class="commodity-name">商品名称</li>
+                                <li class="commodity-price">商品价格</li>
+                                <li class="commodity-source-area">商品产地</li>
+                                <li class="commodity-authentication">认证</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="gongying.html"></a>
+                            <img src="" alt="" class="hot-img">
+                            <ul class="item-information">
+                                <li class="commodity-name">商品名称</li>
+                                <li class="commodity-price">商品价格</li>
+                                <li class="commodity-source-area">商品产地</li>
+                                <li class="commodity-authentication">认证</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="gongying.html"></a>
+                            <img src="" alt="" class="hot-img">
+                            <ul class="item-information">
+                                <li class="commodity-name">商品名称</li>
+                                <li class="commodity-price">商品价格</li>
+                                <li class="commodity-source-area">商品产地</li>
+                                <li class="commodity-authentication">认证</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="gongying.html"></a>
+                            <img src="" alt="" class="hot-img">
+                            <ul class="item-information">
+                                <li class="commodity-name">商品名称</li>
+                                <li class="commodity-price">商品价格</li>
+                                <li class="commodity-source-area">商品产地</li>
+                                <li class="commodity-authentication">认证</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>水果</h3>
+                    <ul class="hot-ul">
+                        <li>
+                            <a href="javascript:;"></a>
+                            <img src="" alt="" class="hot-img">
+                            <ul class="item-information">
+                                <li class="commodity-name">商品名称</li>
+                                <li class="commodity-price">商品价格</li>
+                                <li class="commodity-source-area">商品产地</li>
+                                <li class="commodity-authentication">认证</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="javascript:;"></a>
+                            <img src="" alt="" class="hot-img">
+                            <ul class="item-information">
+                                <li class="commodity-name">商品名称</li>
+                                <li class="commodity-price">商品价格</li>
+                                <li class="commodity-source-area">商品产地</li>
+                                <li class="commodity-authentication">认证</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="javascript:;"></a>
+                            <img src="" alt="" class="hot-img">
+                            <ul class="item-information">
+                                <li class="commodity-name">商品名称</li>
+                                <li class="commodity-price">商品价格</li>
+                                <li class="commodity-source-area">商品产地</li>
+                                <li class="commodity-authentication">认证</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="javascript:;"></a>
+                            <img src="" alt="" class="hot-img">
+                            <ul class="item-information">
+                                <li class="commodity-name">商品名称</li>
+                                <li class="commodity-price">商品价格</li>
+                                <li class="commodity-source-area">商品产地</li>
+                                <li class="commodity-authentication">认证</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="javascript:;"></a>
+                            <img src="" alt="" class="hot-img">
+                            <ul class="item-information">
+                                <li class="commodity-name">商品名称</li>
+                                <li class="commodity-price">商品价格</li>
+                                <li class="commodity-source-area">商品产地</li>
+                                <li class="commodity-authentication">认证</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="javascript:;"></a>
+                            <img src="" alt="" class="hot-img">
+                            <ul class="item-information">
+                                <li class="commodity-name">商品名称</li>
+                                <li class="commodity-price">商品价格</li>
+                                <li class="commodity-source-area">商品产地</li>
+                                <li class="commodity-authentication">认证</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="javascript:;"></a>
+                            <img src="" alt="" class="hot-img">
+                            <ul class="item-information">
+                                <li class="commodity-name">商品名称</li>
+                                <li class="commodity-price">商品价格</li>
+                                <li class="commodity-source-area">商品产地</li>
+                                <li class="commodity-authentication">认证</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="javascript:;"></a>
+                            <img src="" alt="" class="hot-img">
+                            <ul class="item-information">
+                                <li class="commodity-name">商品名称</li>
+                                <li class="commodity-price">商品价格</li>
+                                <li class="commodity-source-area">商品产地</li>
+                                <li class="commodity-authentication">认证</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="javascript:;"></a>
+                            <img src="" alt="" class="hot-img">
+                            <ul class="item-information">
+                                <li class="commodity-name">商品名称</li>
+                                <li class="commodity-price">商品价格</li>
+                                <li class="commodity-source-area">商品产地</li>
+                                <li class="commodity-authentication">认证</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="javascript:;"></a>
+                            <img src="" alt="" class="hot-img">
+                            <ul class="item-information">
+                                <li class="commodity-name">商品名称</li>
+                                <li class="commodity-price">商品价格</li>
+                                <li class="commodity-source-area">商品产地</li>
+                                <li class="commodity-authentication">认证</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>蔬菜</h3>
+                    <ul class="hot-ul">
+                        <li>
+                            <a href="javascript:;"></a>
+                            <img src="" alt="" class="hot-img">
+                            <ul class="item-information">
+                                <li class="commodity-name">商品名称</li>
+                                <li class="commodity-price">商品价格</li>
+                                <li class="commodity-source-area">商品产地</li>
+                                <li class="commodity-authentication">认证</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="javascript:;"></a>
+                            <img src="" alt="" class="hot-img">
+                            <ul class="item-information">
+                                <li class="commodity-name">商品名称</li>
+                                <li class="commodity-price">商品价格</li>
+                                <li class="commodity-source-area">商品产地</li>
+                                <li class="commodity-authentication">认证</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="javascript:;"></a>
+                            <img src="" alt="" class="hot-img">
+                            <ul class="item-information">
+                                <li class="commodity-name">商品名称</li>
+                                <li class="commodity-price">商品价格</li>
+                                <li class="commodity-source-area">商品产地</li>
+                                <li class="commodity-authentication">认证</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="javascript:;"></a>
+                            <img src="" alt="" class="hot-img">
+                            <ul class="item-information">
+                                <li class="commodity-name">商品名称</li>
+                                <li class="commodity-price">商品价格</li>
+                                <li class="commodity-source-area">商品产地</li>
+                                <li class="commodity-authentication">认证</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="javascript:;"></a>
+                            <img src="" alt="" class="hot-img">
+                            <ul class="item-information">
+                                <li class="commodity-name">商品名称</li>
+                                <li class="commodity-price">商品价格</li>
+                                <li class="commodity-source-area">商品产地</li>
+                                <li class="commodity-authentication">认证</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="javascript:;"></a>
+                            <img src="" alt="" class="hot-img">
+                            <ul class="item-information">
+                                <li class="commodity-name">商品名称</li>
+                                <li class="commodity-price">商品价格</li>
+                                <li class="commodity-source-area">商品产地</li>
+                                <li class="commodity-authentication">认证</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="javascript:;"></a>
+                            <img src="" alt="" class="hot-img">
+                            <ul class="item-information">
+                                <li class="commodity-name">商品名称</li>
+                                <li class="commodity-price">商品价格</li>
+                                <li class="commodity-source-area">商品产地</li>
+                                <li class="commodity-authentication">认证</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="javascript:;"></a>
+                            <img src="" alt="" class="hot-img">
+                            <ul class="item-information">
+                                <li class="commodity-name">商品名称</li>
+                                <li class="commodity-price">商品价格</li>
+                                <li class="commodity-source-area">商品产地</li>
+                                <li class="commodity-authentication">认证</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="javascript:;"></a>
+                            <img src="" alt="" class="hot-img">
+                            <ul class="item-information">
+                                <li class="commodity-name">商品名称</li>
+                                <li class="commodity-price">商品价格</li>
+                                <li class="commodity-source-area">商品产地</li>
+                                <li class="commodity-authentication">认证</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="javascript:;"></a>
+                            <img src="" alt="" class="hot-img">
+                            <ul class="item-information">
+                                <li class="commodity-name">商品名称</li>
+                                <li class="commodity-price">商品价格</li>
+                                <li class="commodity-source-area">商品产地</li>
+                                <li class="commodity-authentication">认证</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="Information-section">
+        <div class="hot-consultation-bg">
+            <div class="hot-ct-title">
+                    <span >资讯专区</span>
+                    <span >实时更新三农政策、行情解读、致富经、农技知识等热门资讯</span>
+            </div>
+        </div>
+
+            <div class="success-case"></div>
+    </div>
+    <div class="footer-bg">
+        <div class="bt-content-top">
+            <div class="fixed-btn">
+                <a href="javascript:void(0)" class="go-top"><i class="layui-icon layui-icon-up"></i></a>
+                <a href="javascript:void(0)" class="qrcode"></a>
+            </div>
+            <ul>
+                <li>
+                    <div class="help-text-div">
+                        <ul class="help-text-ul">
+                            <li >使用指南</li>
+                            <li >
+                                <a  href="javascript:;" target="" rel="nofollow">注册新用户</a>
+                            </li>
+                            <li >
+                            <a href="javascript:;" target="" rel="nofollow">实名认证</a>
+                            </li>
+                            <li ><a href="javascript:;" target="" rel="nofollow">找回密码</a>
+                            </li>
+                            <li ><a href="javascript:;" target="" rel="nofollow">帮助中心</a></li>
+                            <li ><a href="javascript:;" target="" rel="nofollow">安装农优购 APP</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <div class="help-text-div">
+                        <ul class="help-text-ul">
+                            <li>采购商服务</li>
+                            <li><a href="javascript:;" target="">找供应</a></li>
+                            <li ><a  href="javascript:;" target="" rel="nofollow">发布采购</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <div class="help-text-div">
+                        <ul class="help-text-ul">
+                            <li >交易安全</li>
+                            <li ><a  href="javascript:;" target="" rel="nofollow">卖家防骗</a></li>
+                            <li ><a  href="javascript:;" target="">营销推广</a></li>
+                            <li ><a  href="javascript:;" target="" rel="nofollow">买家防骗</a></li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+            <div class="app">微信二维码</div>
+            <div class="wx-QR">APP下载码</div>
+        </div>
+        <div class="footer-button">
+            <div data-v-9741756e="" class="bt-content">
+                <div data-v-9741756e="" class="bt-ul-content">
+                    <ul data-v-9741756e="">
+                        <li data-v-9741756e=""><a data-v-9741756e="" href="javascript:;" target="_blank">关于我们</a></li>
+                        <li data-v-9741756e=""><a data-v-9741756e="" href="javascript:;" target="_blank" rel="nofollow">法律声明</a></li>
+                        <li data-v-9741756e=""><a data-v-9741756e="" href="javascript:;" target="_blank" rel="nofollow">使用协议</a></li>
+                        <li data-v-9741756e=""><a data-v-9741756e="" href="javascript:;" target="_blank" rel="nofollow">版权隐私</a></li>
+                        <li data-v-9741756e=""><a data-v-9741756e="" href="javascript:;" target="_blank" rel="nofollow">友情链接</a></li>
+                        <li data-v-9741756e=""><a data-v-9741756e="" href="javascript:;" target="_blank" rel="nofollow">成功案例</a></li>
+                        <li data-v-9741756e=""><a data-v-9741756e="" href="javascript:;" target="_blank">产品库</a></li>
+                        <li data-v-9741756e=""><a data-v-9741756e="" href="javascript:;" target="_blank">品种库</a></li>
+                        <li data-v-9741756e=""><a data-v-9741756e="" href="javascript:;" target="_blank">产品价格大全</a></li>
+                    </ul>
+                </div>
+                <div data-v-9741756e="" class="bt-p">
+                    <p data-v-9741756e="">
+                        <a data-v-9741756e="" href="javascript:;" target="_blank" rel="nofollow">湘ICP备13007354号-1 </a>
+                        <span data-v-9741756e="" class="font">|</span>服务热线：400-008-8688</p>
+                    <p data-v-9741756e="">互联网药品信息服务资格证书:(湘)-经营性-2014-0005 湖南惠农科技有限公司 <a data-v-9741756e="" href="javascript:;" target="_blank" rel="nofollow">营业执照号</a></p>
+                    <p data-v-9741756e="">©-2019 Cnhnb B2B SYSTEM All Rights Reserved</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        $("#page2").load("/nyg/src/main/webapp/html/login_form.html");
+    </script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+.classification {
+    width: 1200px;
+    margin: 0 auto;
+    border: 1px solid #e2e2e2;
+    box-sizing: border-box;
+}
+.clear-float:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+.commodity-classification ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.commodity-classification li {
+    width: 148px;
+    height: 40px;
+    list-style: none;
+
+}
+.commodity-classification a {
+    text-decoration: none;
+    text-align: center;
+    width: 148px;
+    display: inline-block;
+    line-height: 40px;
+    color: black;
+    background-color: #e2e2e2;
+}
+.commodity-classification a:hover {
+    background-color: #bbbbbb;
+}
+.recommend {
+    border: 1px solid #cbcbcb;
+}
+.popular {
+    line-height: 40px;
+    font-size: 20px;
+    color: #ff7c68;
+    padding:0 18px ;
+}
+.recommend ul li {
+    list-style: none;
+    border-bottom: 1px dotted #bbbbbb;
+    line-height: 40px;
+    padding:0 10px ;
+}
+.recommend ul li:last-child {
+    border-bottom:none;
+}
+.recommend a {
+    text-decoration: none;
+    font-size: 18px;
+    display: inline-block;
+    margin: 0 8px;
+    color: #5f5f5f;
+}
+.recommend a:hover {
+    color: #46b136;
+}

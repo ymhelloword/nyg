@@ -1,0 +1,238 @@
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, button, textarea, p, blockquote, th, td { margin:0; padding:0 }
+.clear-float:after {
+    content: "";
+    display: block;
+    clear: both;
+    width: 0px;
+}
+.bread {
+    margin: 2px auto;
+    width: 1200px;
+}
+.bread_left {
+    float: left;
+    width: 460px;
+    height: 540px;
+    background-color: #5a8050;
+}
+.bread_left img {
+    height: 100%;
+}
+.bread_right {
+    float: left;
+   padding-left: 10px;
+    width: 730px;
+    height: 540px;
+
+}
+.black3 {
+    font-size: 16px;
+    margin: 20px 0;
+    font-weight: 700;
+}
+.priceTxt {
+    background: rgba(69,176,53,.1);
+    padding: 10px 16px;
+    margin-bottom: 30px;
+    width: 680px;
+}
+.gray6 {
+    color: #666;
+}
+
+.fs14 {
+    font-size: 14px;
+}
+.info-left {
+    width: 56px;
+    margin-right: 19px;
+    display: inline-block;
+    vertical-align: top;
+}
+.margin-bottom {
+    position: relative;
+    top: 16px;
+}.priceTxt .price {
+     display: inline-block;
+     vertical-align: top;
+     margin-bottom: 16px;
+ }
+.orange {
+    color: #ff6f1c;
+}
+.price {
+    left: 570px;
+}
+.priceTxt .text {
+    margin-left: 87px;
+}
+
+.gray6 {
+    color: #666;
+}
+.fs12 {
+    font-size: 12px;
+}
+.proinfo-text .txt {
+    margin-bottom: 27px;
+    padding-left: 16px;
+}
+.gray6 {
+    color: #666;
+}
+
+.fs14 {
+    font-size: 14px;
+}
+.info-left {
+    width: 56px;
+    margin-right: 19px;
+    display: inline-block;
+    vertical-align: top;
+}
+.gray6 {
+    color: #666;
+}
+
+.fs14 {
+    font-size: 14px;
+}
+.proinfo-text .txt {
+    padding-left: 16px;
+}
+.number {
+    margin-bottom: 10px;
+}
+.number a {
+    display: inline-block;
+    width: 30px;
+    height: 27px;
+    text-align: center;
+    background-color: #dddddd;
+}
+.number .less:after {
+    content: "-";
+    font-weight: bolder;
+}
+.number .add:after {
+    content: '+';
+    font-weight: bolder;
+}
+.number input {
+    width: 40px;
+    height: 24px;
+}
+/*shopping*/
+.shopping {
+padding-bottom: 40px;
+}
+.shopping-cart-1 {
+    display: inline-block;
+    width: 120px;
+    border-radius: 6px;
+    padding-top: 4px;
+    background-color: #29aa34;
+    font-size: 20px;
+    line-height: 45px;
+    text-align: center;
+    color: #dddddd;
+}
+.buy {
+    display: inline-block;
+    width: 120px;
+    margin-left: 40px;
+    border-radius: 6px;
+    padding-top: 4px;
+    background-color: #ffc90f;
+    line-height: 45px;
+    font-size: 20px;
+    text-align: center;
+    color: red;
+}
+.fs12 {
+    font-size: 12px;
+}
+
+.bottom-text {
+    margin-left: 10px;
+}
+.gray3f {
+    color: #3f3f3f;
+}
+.proinfo-text .txt .spec li.eye-renderer__select {
+    background: url(//files.cnhnb.com/potato/img/c-attention-icon.ca09c208.png) no-repeat 100%;
+    background-size: 18px 18px;
+    background-position: 101% 100%;
+    border: 1px solid #45b035;
+    list-style: none;
+}
+.footer-button {
+    width: 1200px;
+    height: 220px ;
+    margin: 0 auto;
+}
+.bt-ul-content {
+
+}
+.bt-ul-content ul {
+    padding: 0 100px ;
+    border: 1px solid hsla(0,0%,90%,.5);
+}
+.bt-ul-content ul li[data-v-9741756e] {
+    list-style: none;
+    position: relative;
+    text-align: center;
+    float: left;
+    top: 44px;
+    width: 100px;
+    height: 14px;
+    line-height: 14px;
+    border-right: 1px solid #999;
+}
+.bt-ul-content ul li[data-v-9741756e]:last-child {
+    width: 120px;
+    border: none;
+}
+.bt-p[data-v-9741756e] {
+    position: relative;
+    text-align: center;
+    margin: 30px auto;
+    top: 70px;
+    height: 92px;
+    width: 641px;
+    font-family: PingFangSC-Regular;
+    font-size: 12px;
+    color: #999;
+    line-height: 30px;
+    letter-spacing: 0;
+}
+.help-text-ul {
+    list-style: none;
+    float: left;
+    margin-left: 20px;
+}
+.help-text-ul li:nth-child(1) {
+    line-height:30px;
+    font-size: 18px;
+}
+.help-text-ul a {
+    text-decoration: none;
+    font-size: 14px;
+    color: #666;
+    line-height: 24px;
+}
+.footer-bg {
+
+}
+.bt-content {
+    width: 1200px;
+    margin:  0 auto;
+}
+.bt-ul-content ul li{
+    list-style: none;
+    float: left;
+    margin: 10px;
+}
+.bt-p {
+    text-align: center;
+}

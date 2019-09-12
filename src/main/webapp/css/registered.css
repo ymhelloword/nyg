@@ -1,0 +1,17 @@
+.bg-color {
+    background-color: #dddddd;
+    color: darkgreen;
+
+}
+.login {
+    padding-top: 20px;
+    height: 400px;
+    width: 400px;
+    background-color: #eeeeee;
+}
+.img {
+    padding-top: 20px;
+    height: 400px;
+    width: 400px;
+    background-color: #43fdff;
+}
