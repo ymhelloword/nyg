@@ -82,4 +82,9 @@ public class CustomerSevriceImp implements Customersevrice {
     public int findCustomerByNameAndPsd(String loginName, String password) {
         return customerDao.findCustomerByNameAndPsd(loginName,password);
     }
+
+    @Override
+    public int checkAddr(int customerId) {
+        return 0;
+    }
 }

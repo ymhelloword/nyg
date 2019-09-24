@@ -1,8 +1,11 @@
 package com.nyg.ssm.entity;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.stereotype.Component;
+
 import java.io.Serializable;
 import java.util.Date;
+
 public class ProductInfo implements Serializable {
   private int productId;
   private String productCore;

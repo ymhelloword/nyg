@@ -48,6 +48,6 @@ public interface Customersevrice {
     public Integer findCustomer(CustomerLogin customerLogin);
     public CustomerInf findCustomerInfById(int id);
     public int findCustomerByNameAndPsd(String loginName,String password);
-
+    public int checkAddr(int customerId);
 
 }

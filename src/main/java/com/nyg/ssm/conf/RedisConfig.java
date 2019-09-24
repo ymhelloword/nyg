@@ -16,13 +16,13 @@ import redis.clients.jedis.JedisPoolConfig;
  * @Author zjl
  * @Date 2019/9/11 10:32
  */
-@Configuration
+
 public class RedisConfig {
     @Autowired
     private JedisConnectionFactory jedisConnectionFactory;
     @Autowired
     private JedisPoolConfig jedisPoolConfig;
-    @Bean
+
     public RedisTemplate<String,Object> redisTemplate(){
         RedisTemplate<String, Object> template = new RedisTemplate<String, Object>();
         jedisConnectionFactory.setPoolConfig(jedisPoolConfig);
@@ -30,7 +30,6 @@ public class RedisConfig {
 
         Jackson2JsonRedisSerializer<Object> jackson2JsonRedisSerializer = new Jackson2JsonRedisSerializer(Object.class);
         ObjectMapper om = new ObjectMapper();
-
         om.setVisibility(PropertyAccessor.ALL, JsonAutoDetect.Visibility.ANY);
 
         om.enableDefaultTyping(ObjectMapper.DefaultTyping.NON_FINAL);

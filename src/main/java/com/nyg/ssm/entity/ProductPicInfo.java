@@ -78,6 +78,20 @@ public class ProductPicInfo implements Serializable {
     return modifiedTime;
   }
 
+  @Override
+  public String toString( ) {
+    return "ProductPicInfo{" +
+            "productPicId=" + productPicId +
+            ", productId=" + productId +
+            ", picDesc='" + picDesc + '\'' +
+            ", picUrl='" + picUrl + '\'' +
+            ", isMaster=" + isMaster +
+            ", picOrder=" + picOrder +
+            ", picStatus=" + picStatus +
+            ", modifiedTime=" + modifiedTime +
+            '}';
+  }
+
   public void setModifiedTime(Date modifiedTime) {
     this.modifiedTime = modifiedTime;
   }
