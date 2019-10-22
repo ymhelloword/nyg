@@ -101,4 +101,7 @@
             set head_portrait=#{headPortrait}
         </if>
     </update>
+    <update id="updatePassword">
+        update customer_login set password=#{pwd} where phoneNumber=#{phoneNumber}
+    </update>
 </mapper>

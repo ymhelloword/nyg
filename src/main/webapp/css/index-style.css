@@ -514,19 +514,18 @@ a {
     background-color: #5a8050;
 }
 .success-case {
-    height: 300px;
     width: 1200px;
     margin: 0 auto;
-    background-color: #ff5751;
+    background-color: #e9e9e9;
 }
 .footer-bg {
-    background-color: #e6e6e6;
 }
 .bt-content-top {
     width: 1200px;
     height: 180px;
     overflow: hidden;
     margin: 0 auto ;
+    background-color: #e9e9e9;
 
 }
 /*跳回顶部*/

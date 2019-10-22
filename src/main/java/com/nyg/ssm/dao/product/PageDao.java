@@ -11,6 +11,6 @@ import java.util.List;
  * @Date 2019/7/30 15:39
  */
 public interface PageDao {
-    public List<ProductInfo> queryCurrentData(@Param("page") Integer currentPage,@Param("size") Integer pageSize,@Param("categoryId") Integer categoryId);
-    public Integer getPageNumber(@Param("categoryId") Integer categoryId);
+     List<ProductInfo> queryCurrentData(@Param("page") Integer currentPage,@Param("size") Integer pageSize,@Param("categoryId") Integer categoryId);
+     Integer getPageNumber(@Param("categoryId") Integer categoryId);
 }

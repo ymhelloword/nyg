@@ -43,6 +43,10 @@
         <result column="pic_order" property="picOrder"/>
         <result column="pic_status" property="picStatus"/>
     </resultMap>
+    <sql id="product">
+        product_id,product_core,product_name,supplier_id,price,
+        publish_status,audit_status,production_date,shelf_life,descript,indate
+    </sql>
     <select id="getProductSimpleInfoById" parameterType="int" resultMap="productSimpl">
         select
         product_id,product_core,product_name,supplier_id,price,
@@ -89,5 +93,20 @@
     </select>
     <select id="getCount" resultType="integer">
         select count(product_id) from product_info;
+    </select><select id="getProductInfos" resultMap="productSimpl">
+        select <include refid="product"></include> from product_info
+       where
+            <if test="sort1 != 0"> one_category_id=#{sort1}</if>
+            <if test="sort2 != 0"> and  two_category_id=#{sort2}</if>
+            <if test="sort3 != 0"> and three_category_id=#{sort3}</if>
+            <if test="page != null"> limit #{page.numbPages},#{page.size}</if>
+
+    </select>
+    <select id="sortCount" resultType="java.lang.Integer">
+        select count(product_id) from product_info
+        where
+        <if test="sort1 != 0"> one_category_id=#{sort1}</if>
+        <if test="sort2 != 0"> and  two_category_id=#{sort2}</if>
+        <if test="sort3 != 0"> and three_category_id=#{sort3}</if>
     </select>
 </mapper>

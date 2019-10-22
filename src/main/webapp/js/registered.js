@@ -4,7 +4,7 @@ $(function () {
     var $confirm = $("#confirm");
     var timer ;
     $account.focus(function () {
-        var Regular = /^([a-zA-Z0-9]){6,12}$/;
+        var Regular = /^(\d+){11}$/;
         timer = setInterval(function () {
             var value = $account.val();
             if (Regular.test(value)){
@@ -19,7 +19,7 @@ $(function () {
     });
     $account.blur(function () {
         var value = $account.val();
-        var Regular = /^([a-zA-Z0-9]){6,14}$/;
+        var Regular = /^(\d+){11}$/;
         if (Regular.test(value)){
             $account.css({border:"none"})
             $(".accountErr").text("");
@@ -110,6 +110,43 @@ $(function () {
             return false;
         }
 
+    });
+    $("#getCode").on("click",function (event) {
+        event.preventDefault();
+        var telephone = $account.val();
+        if (telephone === ''){
+            alert("手机号码不能为空");
+            return;
+        }
+        var $getCode = $(this);
+        $getCode.attr("disabled","disabled")
+       var $template = $("<span>&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"second\">60</span>秒后重试</span>");
+        $template.insertAfter($getCode);
+        var $second = $(".second");
+        var second = 60;
+        function del() {
+            if (second === 0){
+                second = 60;
+                clearInterval(a);
+               $getCode.removeAttr("disabled");
+               $template.remove();
+                return;
+            }else {
+                second --;
+                $second.text(second);
+            }
+        }
+        var  a = setInterval(function () {
+                del();
+        },1000);
+        $.ajax({
+            url:"/nyg/signup/getVerCode",
+            type:"get",
+            data:{telephone:telephone},
+            success:function (data) {
+                alert(data);
+            }
+        })
     })
 
 });

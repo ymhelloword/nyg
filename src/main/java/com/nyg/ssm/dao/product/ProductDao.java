@@ -6,18 +6,20 @@ import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 public interface ProductDao {
-    public int addProduct(ProductInfo productInfo);
-    public int addProductPicInfo(ProductPicInfo productPicInfo);
-    public int addProducts(List<ProductInfo> list);
-    public int deleteProductById(int id);
-    public int deleteProductByIds(List<Integer> list);
-    public int updateProduct(ProductInfo productInfo);
-    public ProductInfo findProductInfoSimplById(int id);
-    public List<ProductInfo> findProductByName(@Param("productName") String productName,@Param("page") PageUtil page);
-    public ProductInfo getProductSimpleInfoById(int id);
-    public List<ProductInfo> getProductSimpleInfoByName(String name);
-    public ProductPicInfo findItemUrlById(int id);
-    public List<ProductInfo> findProductInfos(@Param("page") PageUtil pageUtil,@Param("kind_1") int kind_1,@Param("kind_2") int kind_2);
-    public int getNewProductId();
+    int addProduct(ProductInfo productInfo);
+    int addProductPicInfo(ProductPicInfo productPicInfo);
+    int addProducts(List<ProductInfo> list);
+    int deleteProductById(int id);
+    int deleteProductByIds(List<Integer> list);
+    int updateProduct(ProductInfo productInfo);
+    ProductInfo findProductInfoSimplById(int id);
+    List<ProductInfo> findProductByName(@Param("productName") String productName,@Param("page") PageUtil page);
+    ProductInfo getProductSimpleInfoById(int id);
+    List<ProductInfo> getProductSimpleInfoByName(String name);
+    ProductPicInfo findItemUrlById(int id);
+    List<ProductInfo> findProductInfos(@Param("page") PageUtil pageUtil,@Param("kind_1") int kind_1,@Param("kind_2") int kind_2);
+    int getNewProductId();
     int getCount();
+    List <ProductInfo> getProductInfos(@Param("sort1") int sort1,@Param("sort2") int sort2,@Param("sort3") int sort3,@Param("page") PageUtil page);
+    int sortCount(@Param("sort1") int sort1,@Param("sort2") int sort2,@Param("sort3") int sort3);
 }

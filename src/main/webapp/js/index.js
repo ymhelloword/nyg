@@ -96,14 +96,7 @@ $(function () {
             target = false ;
         })
     }
-    var $searchButton = $(".search-button");
-    var $searchName = $(".search-text-model");
-    $searchButton.on("click",function () {
-        var value = $searchName.val();
-        if (value!=null&&value!==""){
-            location.href="/nyg/items/1?productName="+value;
-        }
-    });
+
     // var loginName = $.cookie("loginName");
     // var password = $.cookie("password");
     // console.log(loginName+"...."+password);

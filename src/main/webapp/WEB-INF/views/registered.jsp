@@ -7,8 +7,8 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%
-    String appleContext = request.getContextPath();
-    String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+appleContext;
+    String appleContext = request.getContextPath( );
+    String basePath = request.getScheme( ) + "://" + request.getServerName( ) + ":" + request.getServerPort( ) + appleContext;
 %>
 <!DOCTYPE html>
 <html lang="en">
@@ -56,28 +56,45 @@
 </div>
 <div class="content">
     <div class="container">
-                <form action="" class="row">
-        <div class="row">
-            <div class="col-8  login">
+        <form action="" class="row">
+            <div class="row">
+                <div class="col-8  login">
                     <div class="form-group row col-12">
-                        <label for="account" class="col-3  col-form-label text-right"><i class="glyphicon glyphicon-user"></i>账号:</label>
+                        <label for="account" class="col-3  col-form-label text-right"><i
+                                class="glyphicon glyphicon-user"></i>您的手机号:</label>
                         <div class="col-9 ">
                             <input type="text" id="account" name="loginName" class=" form-control">
-                            <p class="help-block"><span class="accountErr" style="color: #ff5a35"></span><small>输入6-12的字符(数字,英文字符)</small></p>
+                            <p class="help-block"><span class="accountErr" style="color: #ff5a35"></span><small>输入您的手机号码</small>
+                            </p>
                         </div>
                     </div>
                     <div class="form-group row col-12">
-                        <label for="password" class="col-3 col-form-label text-right"><i class="glyphicon glyphicon-lock"></i>密码:</label>
+                        <label for="password" class="col-3 col-form-label text-right"><i
+                                class="glyphicon glyphicon-lock"></i>密码:</label>
                         <div class="col-9  ">
                             <input type="password" id="password" name="password" class=" form-control">
-                            <p class="help-block"><span class="passwordErr" style="color: #ff013d"></span><small>输入6-14位的密码</small></p>
+                            <p class="help-block"><span class="passwordErr" style="color: #ff013d"></span><small>输入6-14位的密码</small>
+                            </p>
                         </div>
                     </div>
                     <div class="form-group row col-12">
-                        <label for="confirm" class="col-3 col-form-label text-right"><i class="glyphicon glyphicon-"></i>确认密码:</label>
+                        <label for="confirm" class="col-3 col-form-label text-right"><i
+                                class="glyphicon glyphicon-"></i>确认密码:</label>
                         <div class="col-9">
-                            <input type="password" id="confirm"  class=" form-control">
+                            <input type="password" id="confirm" class=" form-control">
                             <span class="confirmPwd" style="color: red"></span>
+                        </div>
+                    </div>
+                    <div class="form-group row col-12">
+                        <label for="verification_code" class="col-3 col-form-label text-right"><i
+                                class="glyphicon glyphicon-"></i>验证码:</label>
+                        <div class="col-3">
+                            <input type="text" id="verification_code" name="code" class=" form-control">
+                            <!--                        <span style="color:red">验证码错误</span>-->
+                        </div>
+                        <div class="col-6">
+                            <button type="button" class="btn btn-success  control-label" id="getCode">获取验证码</button>
+
                         </div>
                     </div>
                     <div class="form-group row col-12 ">
@@ -86,12 +103,12 @@
                             <input type="reset" class="btn btn-danger control-label" value="重置"></input>
                         </div>
                     </div>
+                </div>
+                <div class="img col-4" style="text-align: center">
+                    <p>上传头像</p>
+                    <input type="file" id="file" name="file">
+                </div>
             </div>
-            <div class="img col-4" style="text-align: center">
-                <p>上传头像</p>
-                <input type="file" id="file" name="file">
-            </div>
-        </div>
         </form>
     </div>
 </div>

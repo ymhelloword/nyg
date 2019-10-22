@@ -155,7 +155,12 @@
                     <img src="<%=basePath%>/img/noLogin.039bce8e.png" height="48" width="48"/>
                 </div>
                 <div class="login-right">
-                    <span>HI，您好 请登录</span>
+                    <c:if test="${not empty sessionScope.get('account')}">
+                        <span>HI，您好${sessionScope.get('account')}</span>
+                    </c:if>
+                    <c:if test="${empty sessionScope.get('account')}">
+                        <span>HI，您好</span>
+                    </c:if>
                     <div class="sm-login" id="register"><a href="/nyg/login">免费注册登录</a></div>
                 </div>
             </div>

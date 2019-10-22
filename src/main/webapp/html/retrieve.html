@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../js/jquery-1.12.4.js"></script>
+    <script src="../js/retrieve.js"></script>
+</head>
+<body>
+    <div>
+        <h2>重置密码</h2>
+        <form action="">
+            <label for="phone_number">手机号码</label>
+            <input type="text" id="phone_number" name="phone" value=""><br>
+            <label for="pwd">密码</label>
+            <input type="text" name="pwd" id="pwd"><span style="font-size: 12px">(请输入6~16位英文数字英文字符密码)</span><br>
+            <label for="pwd_confirm">确认密码</label>
+            <input type="text" id="pwd_confirm"><br>
+            <label for="code">输入验证码</label>
+            <input type="text" id="code" name="code">
+            <input type="button" id="getCode" value="获取验证码"><br>
+            <input type="button" id="submit" value="提交">
+        </form>
+    </div>
+</body>
+</html>

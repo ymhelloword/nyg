@@ -87,4 +87,9 @@ public class CustomerSevriceImp implements Customersevrice {
     public int checkAddr(int customerId) {
         return 0;
     }
+    @Override
+    public int updatePassword(String phoneNumber, String pwd) {
+        return customerDao.updatePassword(phoneNumber,pwd);
+    }
+
 }

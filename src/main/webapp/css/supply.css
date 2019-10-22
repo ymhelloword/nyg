@@ -3,180 +3,15 @@ body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fiel
     width: 100%;
     height: 193px;
 }
+#supply-header {
+    background-color: #52aa4d;
+}
+#supply-header a {
+    color: #faffff;
+}
 a {
     text-decoration: none;
     color: #777777;
-}
-.bg .header-top{
-    width: 100%;
-    height: 34px;
-    background-color: #e3e4e5;
-    margin: 0 auto;
-}
-.bg .header-top .top-nav-content{
-    width: 1200px;
-    height: 34px;
-    margin: 0 auto;
-}
-.bg .header-top .top-nav-content .top-title {
-    width: 200px;
-    height: 34px;
-    float: left;
-}
-.bg .header-top .top-nav-content .top-title p{
-    font-size: 12px;
-    color: #777777;
-    line-height: 35px;
-    text-align: center;
-}
-.bg .header-top .top-nav-content .top-title span{
-    margin-left: 4px;
-    cursor: pointer;
-}
-.bg .header-top .top-nav-content .top-title span a{
-    color: #ff5751;
-    text-decoration: none;
-}
-.bg .header-top .top-nav-content .top-title span:hover{
-    text-decoration: underline red;
-    font-size: 14px;
-}
-.bg .header-top .top-nav-content .top-ul{
-    width: 540px;
-    height: 34px;
-    float: right;
-    text-align: center;
-    padding: 9px 0;
-    box-sizing:border-box;
-}
-.bg .header-top .top-nav-content .top-ul ul{
-    width: 100%;
-    height: 15px;
-}
-.bg .header-top .top-nav-content .top-ul ul li{
-    width: 90px;
-    height: 15px;
-    border-right: 1px solid #676767;
-    float: left;
-    list-style: none;
-    font-size: 12px;
-}
-.bg .header-top .top-nav-content .top-ul ul li a{
-    text-decoration: none;
-    color: #777777;
-}
-.bg .header-content{
-    width: 100%;
-    height: 123px;
-}
-.bg .header-content .search-bg{
-    width: 1200px;
-    height: 123px;
-    margin: 0 auto;
-}
-.bg .header-content .search-bg .log{
-    width: 338px;
-    height: 123px;
-    float: left;
-    box-sizing: border-box;
-}
-.bg .header-content .search-bg .log .log-img{
-    width: 200px;
-    height: 123px;
-    float: left;
-
-}
-.bg .header-content .search-bg .log .log-img img{
-    height: 123px;
-    margin-left: 40px;
-}
-/*.bg .header-content .search-bg .log .log-art-font{
-    width: 100px;
-    height: 80px;
-    float: left;
-    margin-top: 10px;
-    margin-left: 4px;
-    background-color: #777777;
-}*/
-.bg .header-content .search-bg .search{
-    width: 580px;
-    height: 40px;
-    background-color: bisque;
-    float: left;
-    margin-left: 60px;
-    margin-top: 40px;
-}
-.bg .header-content .search-bg .search .search-text{
-    width: 500px;
-    height: 40px;
-    background-color: #e3e4e5;
-    float: left;
-    border: 2px solid #46b136;
-    box-sizing: border-box;
-}
-.bg .header-content .search-bg .search .search-text input{
-    width: 500px;
-    height: 36px;
-    border: none;
-    text-indent: 1em;
-    font-size: 14px;
-    outline: none;
-}
-.bg .header-content .search-bg .search .search-button{
-    width: 80px;
-    height: 40px;
-    display: inline-block;
-    background-color: #47b237;
-}
-.bg .header-content .search-bg .search .search-button span{
-    width: 80px;
-    height: 40px;
-    display: inline-block;
-    font-weight: bold;
-    color: white;
-    text-align: center;
-    line-height: 40px;
-    cursor: pointer;
-}
-.bg .header-content .search-bg .search .search-button span:hover{
-    background-color: green;
-}
-.bg .nav-bg{
-    width: 100%;
-    height: 34px;
-    border-bottom: 2px solid green;
-}
-.bg .nav-bg .nav-bg-content{
-    width: 1200px;
-    height: 34px;
-    margin: 0 auto;
-}
-.bg .nav-bg .nav-bg-content ul{
-    width: 1200px;
-    height: 34px;
-}
-.bg .nav-bg .nav-bg-content ul li{
-    width: 180px;
-    height: 34px;
-    float: left;
-    list-style: none;
-    text-align: center;
-}
-.bg .nav-bg .nav-bg-content ul li a{
-    line-height: 34px;
-    text-decoration: none;
-    color: black;
-}
-.bg .nav-bg .nav-bg-content ul li a:hover{
-    color: #5a8050;
-}
-.bg .nav-bg .nav-bg-content ul li:nth-child(1){
-    width: 200px;
-    margin-right: 60px;
-    background-color: green;
-}
-.bg .nav-bg .nav-bg-content ul li:nth-child(1) a{
-    color: white;
 }
 .content {
     width: 1200px;
@@ -259,7 +94,7 @@ a {
     margin: 0 10px 10px 0;
 }
 .hot-ul>li:hover {
-    box-shadow: 0px 0px 4px #37aa4e;
+    box-shadow: 0 0 4px #767676;
 }
 .hot-ul .hot-img {
     width: 100%;

@@ -7,13 +7,10 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page isELIgnored="false"%>
-<%@ taglib uri="http://java.sun.com/jstl/core_rt" prefix="c"%>
-<%@ taglib uri="http://java.sun.com/jstl/fmt_rt" prefix="fmt"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 <%
     String path = request.getContextPath();
     String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path;
-    String ip_port = request.getScheme()+"://"+ request.getServerName() + ":" + request.getServerPort();
+    String ip_port = request.getScheme()+"://"+"47.102.151.46";
 %>
 <!DOCTYPE html>
 <html lang="en">
@@ -21,13 +18,15 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <link rel="stylesheet" href="<%=basePath%>/css/items-style.css">
-    <link rel="stylesheet" href="<%=basePath%>/css/public/header.css">
+
     <link rel="stylesheet" href="<%=basePath%>/css/login_formStyle.css">
 </head>
 <body>
 <div id="page2"></div>
 <div class="bg">
-    <script> $(".bg").load("/nyg/html/public/header.html");</script>
+    <%--<script> $(".bg").load("/nyg/html/public/header.html");</script>--%>
+    <%@include file="./public/header.jsp"%>
+
 </div>
 <div class="content">
     <div class="main clear-float">
@@ -47,6 +46,7 @@
             </c:forEach>
         </c:if>
     </div>
+    <%@include file="public/page.jsp"%>
 </div>
 <script src="<c:url value="/js/jquery-1.12.4.js"/>"></script>
 <script src="<%=basePath%>/js/item-js.js"></script>

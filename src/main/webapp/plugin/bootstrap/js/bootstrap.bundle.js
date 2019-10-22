@@ -200,7 +200,7 @@
     findShadowRoot: function findShadowRoot(element) {
       if (!document.documentElement.attachShadow) {
         return null;
-      } // Can find the shadow root otherwise it'll return the document
+      } // Can find the shadow root otherwise it'分类 return the document
 
 
       if (typeof element.getRootNode === 'function') {

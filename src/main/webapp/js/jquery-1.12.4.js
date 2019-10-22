@@ -6818,7 +6818,7 @@ if ( window.getComputedStyle ) {
 
 function addGetHookIf( conditionFn, hookFn ) {
 
-	// Define the hook, we'll check on the first run if it's really needed.
+	// Define the hook, we'分类 check on the first run if it's really needed.
 	return {
 		get: function() {
 			if ( conditionFn() ) {

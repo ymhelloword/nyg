@@ -10,9 +10,14 @@
 <html>
 <head>
     <title>Title</title>
+    <link rel="stylesheet" href="<%=request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+request.getContextPath()+"/css/public/header.css"%>">
 </head>
 <body>
-    <h1>error</h1>
-    <h2>${name}</h2>
+<%--<div id="page2"></div>--%>
+<%--<div class="bg">--%>
+<%--    &lt;%&ndash;<script> $(".bg").load("/nyg/html/public/header.html");</script>&ndash;%&gt;--%>
+<%--    <%@include file="./public/header.jsp"%>--%>
+<%--</div>--%>
+
 </body>
 </html>

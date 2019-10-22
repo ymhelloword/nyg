@@ -46,7 +46,7 @@
                 } else if (!$.belowthefold(this, settings) &&
                     !$.rightoffold(this, settings)) {
                     $this.trigger("appear");
-                    /* if we found an image we'll load, reset the counter */
+                    /* if we found an image we'分类 load, reset the counter */
                     counter = 0;
                 } else {
                     if (++counter > settings.failure_limit) {

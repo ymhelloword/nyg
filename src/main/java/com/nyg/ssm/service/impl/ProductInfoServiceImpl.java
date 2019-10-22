@@ -7,6 +7,7 @@ import com.nyg.ssm.entity.page.Page;
 import com.nyg.ssm.service.ProductInfoService;
 import com.nyg.ssm.service.RedisService;
 import com.nyg.ssm.utils.PageUtil;
+import com.nyg.ssm.utils.RedisUtil;
 import org.apache.commons.io.FileUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -31,11 +32,11 @@ public class ProductInfoServiceImpl implements ProductInfoService {
     @Autowired
     private ProductDao productDao;
     @Autowired
-    private RedisService redisService;
-    @Autowired
     private RedisTemplate<String,Object> redisTemplate;
     @Autowired
     private PageDao pageDao;
+    @Autowired
+    private RedisUtil redisUtil;
     @Override
     public int addProduct(ProductInfo productInfo, CommonsMultipartFile[] commonsMultipartFiles) {
         int a = 0;
@@ -110,14 +111,21 @@ public class ProductInfoServiceImpl implements ProductInfoService {
 
     @Override
     public List<ProductInfo> findProductInfos(PageUtil pageUtil) {
-        List <ProductInfo> productInfos1 = productDao.findProductInfos(pageUtil, 2, 1);
-        List <ProductInfo> productInfos3 = productDao.findProductInfos(pageUtil, 1, 2);
-        List <ProductInfo> productInfos4 = productDao.findProductInfos(pageUtil,1,1);
-        List<ProductInfo> productInfos = new ArrayList <ProductInfo>();
-        productInfos.addAll(productInfos1);
-        productInfos.addAll(productInfos3);
-        productInfos.addAll(productInfos4);
-         return productInfos;
+        if ( redisUtil.existsKey("productInfos") ){
+            List<ProductInfo> productInfos = ( List <ProductInfo> ) redisUtil.getForValue("productInfos");
+            return productInfos;
+        }else {
+            List <ProductInfo> productInfos1 = productDao.findProductInfos(pageUtil, 2, 1);
+            List <ProductInfo> productInfos3 = productDao.findProductInfos(pageUtil, 1, 2);
+            List <ProductInfo> productInfos4 = productDao.findProductInfos(pageUtil,1,1);
+            List<ProductInfo> productInfos = new ArrayList <ProductInfo>();
+            productInfos.addAll(productInfos1);
+            productInfos.addAll(productInfos3);
+            productInfos.addAll(productInfos4);
+            redisUtil.set("productInfos",productInfos);
+            return productInfos;
+        }
+
     }
 
     @Override
@@ -140,6 +148,12 @@ public class ProductInfoServiceImpl implements ProductInfoService {
     }
 
     @Override
+    public List <ProductInfo> getProductInfos(int sort1, int sort2, int sort3, PageUtil page) {
+
+        return productDao.getProductInfos(sort1, sort2, sort3, page);
+    }
+
+    @Override
     public int getCount( ) {
         return productDao.getCount();
     }
@@ -153,5 +167,10 @@ public class ProductInfoServiceImpl implements ProductInfoService {
         }
         System.out.println(list) ;
         return list;
+    }
+
+    @Override
+    public int sortCount(int sort1, int sort2, int sort3) {
+        return productDao.sortCount(sort1,sort2,sort3);
     }
 }

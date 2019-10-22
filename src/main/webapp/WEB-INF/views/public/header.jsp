@@ -13,6 +13,18 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <link rel="stylesheet" href="<%=request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+request.getContextPath()+"/css/public/header.css"%>">
+    <script>
+        $(function () {
+            var $searchButton = $(".search-button");
+            var $searchName = $(".search-text-model");
+            $searchButton.on("click",function () {
+                var value = $searchName.val();
+                if (value!=null&&value!==""){
+                    location.href="/nyg/search?productName="+value;
+                }
+            });
+        })
+    </script>
 </head>
 <body>
 <div class="header-top">
@@ -25,7 +37,7 @@
         </div>
         <div class="top-ul">
             <ul>
-                <li><span><a href="javascript:;">网站首页</a></span></li>
+                <li><span><a href="/nyg">网站首页</a></span></li>
                 <li><span><a href="javascript:;">扶贫项目</a></span></li>
                 <li><span><a href="javascript:;">关于我们</a></span></li>
                 <li><span><a href="javascript:;">帮助中心</a></span></li>
@@ -70,7 +82,7 @@
     <div class="nav-bg-content">
         <ul>
             <li id="index-header"><a href="/nyg/" >首页</a></li>
-            <li><a href="/nyg/supply/1">供应大厅</a></li>
+            <li id="supply-header"><a href="/nyg/supply/1">供应大厅</a></li>
             <li id="purchase-header"><a href="/nyg/purchase" rel="">采购大厅</a></li>
             <li><a href="javascript:;">扶贫信息</a></li>
             <li><a href="javascript:;">产业带</a></li>

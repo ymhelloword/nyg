@@ -9,9 +9,13 @@ import java.util.List;
  * @Date 2019/8/7 17:19
  */
 public interface OrderCartService {
-    public int addItem(OrderCart orderCart);
-    public int deleteItem(OrderCart orderCart);
-    public List <OrderCart> findOrderByUserId(int id);
-    public int updataItem(OrderCart orderCart);
-    public int deleteItems(List<Integer> itemId );
+    int addItem(OrderCart orderCart);
+
+    int deleteItem(OrderCart orderCart);
+
+    List <OrderCart> findOrderByUserId(int id);
+
+    int updataItem(OrderCart orderCart);
+
+    int deleteItems(List <Integer> itemId);
 }
